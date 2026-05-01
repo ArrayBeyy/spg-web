@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* =========================
+   RESET
+========================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* FIX SVG GLOBAL */
+svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 230px;
+    position: fixed;
+    height: 100%;
+    background: #fff;
+    border-right: 1px solid #eee;
+    z-index: 100;
+}
+
+.main-content {
+    margin-left: 230px;
+    width: calc(100% - 230px);
+}
+
+.content-area {
+    padding: 24px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+    height: 60px;
+    background: #D90007;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    color: #fff;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #555;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+/* 🔥 FIX ICON SIDEBAR */
+.sidebar-link svg {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.sidebar-link:hover {
+    background: #ffecec;
+    color: #D90007;
+}
+
+.sidebar-link.active {
+    background: #D90007;
+    color: #fff;
+}
+
+/* =========================
+   HEADER
+========================= */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-header h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    padding: 20px;
+}
+
+/* =========================
+   TABLE
+========================= */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    text-align: left;
+    font-size: 12px;
+    color: #999;
+    padding: 10px;
+}
+
+.table td {
+    padding: 12px 10px;
+    border-top: 1px solid #f1f1f1;
+}
+
+.table tr:hover {
+    background: #fff5f5;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-primary {
+    background: #D90007;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #b80006;
+}
+
+.btn-edit {
+    background: #fff3cd;
+    color: #856404;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.btn-delete {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    border: none;
+}
+
+/* =========================
+   FORM
+========================= */
+.form-card {
+    max-width: 500px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+/* =========================
+   ALERT
+========================= */
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   ACTION GROUP
+========================= */
+.action-group {
+    display: flex;
+    gap: 8px;
+}
+
+/* =========================
+   EMPTY
+========================= */
+.empty {
+    text-align: center;
+    color: #aaa;
+    padding: 20px;
+}
+
+/* =========================
+   🔥 BD FORM FIX (INI PENTING)
+========================= */
+
+/* batasi icon biar ga gede */
+.bd-input-icon {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* wrapper aman */
+.bd-input-wrap {
+    position: relative;
+}
+
+/* input aman */
+.bd-input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
